@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\Admin\.Rider2019.2\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Admin\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_VirtualScenes.590223121.00" t="ExcludeRecursive" />
+    <e p="D:\HYprojects\VirtualScenes" t="IncludeRecursive">
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="Medias" t="Include">
+          <e p="flv" t="Include">
+            <e p="list.txt" t="Include" />
+          </e>
+        </e>
+        <e p="Scripts" t="Include">
+          <e p="bd" t="Include">
+            <e p="ControlMyBD.cs" t="Include" />
+            <e p="DataMgr.cs" t="Include" />
+            <e p="MyBD.cs" t="Include" />
+            <e p="ViewCommit.cs" t="Include" />
+          </e>
+          <e p="Medias" t="Include">
+            <e p="Medias.cs" t="Include" />
+          </e>
+          <e p="Test" t="Include">
+            <e p="CSharpTest.cs" t="Include" />
+            <e p="DeBugInfo.cs" t="Include" />
+            <e p="Demo.cs" t="Include" />
+            <e p="Demo2.cs" t="Include" />
+            <e p="Demo2Item.cs" t="Include" />
+            <e p="DemoItem.cs" t="Include" />
+            <e p="FrameMgr.cs" t="Include" />
+            <e p="FrameUpdate.cs" t="Include" />
+            <e p="PostionTest.cs" t="Include" />
+          </e>
+        </e>
+        <e p="test.txt" t="Include" />
+      </e>
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="Packages" t="ExcludeRecursive" />
+      <e p="Temp\bin" t="ExcludeRecursive" />
+      <e p="VirtualScenes.sln" t="IncludeFlat" />
+    </e>
+  </component>
+</project>
