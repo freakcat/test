@@ -12,14 +12,14 @@ public class DataMgr : MonoBehaviour
     void Start()
     {
  
-        ViewCommit.vc.Cclick += GetName;
+        ViewCommit.Vc.Cclick += GetName;
     }
 
     private string GetName(string s)
     {
         Suffer suffer = new Suffer();
-        suffer.info.name = s;
-        string a = ControlMyBD.CreateBD(suffer);
+        suffer.Info.Name = s;
+        string a = ControlMyBd.CreateBd(suffer);
        
         char isvail = a.First(  (x) => { return x=='0';} );
         string result = a.Remove(0,1);
@@ -30,7 +30,7 @@ public class DataMgr : MonoBehaviour
         }
         else
         {
-            return JsonUtility.FromJson<Suffer>(result).info.name;  
+            return JsonUtility.FromJson<Suffer>(result).Info.Name;  
         }
       
     }

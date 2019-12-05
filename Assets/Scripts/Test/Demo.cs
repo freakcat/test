@@ -6,11 +6,11 @@ using UnityEngine;
 
 public class Demo : MonoBehaviour
 {
-    private List<DemoItem> itemList;
+    private List<DemoItem> _itemList;
 
     void Awake()
     {
-        this.itemList = new List<DemoItem>();
+        this._itemList = new List<DemoItem>();
 
         GameObject objectItem = null;
 
@@ -25,7 +25,7 @@ public class Demo : MonoBehaviour
             demoItem = objectItem.AddComponent<DemoItem>();
             demoItem.index = index;
 
-            this.itemList.Add(demoItem);
+            this._itemList.Add(demoItem);
         }
 
         this.StartCoroutine(this.AwakeEnumerator());
@@ -36,10 +36,10 @@ public class Demo : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
 
-        int length = this.itemList.Count;
+        int length = this._itemList.Count;
         for (int index = 0; index < length; index++)
         {
-            this.itemList[index].Init();
+            this._itemList[index].Init();
         }
 
         StringBuilder a = new StringBuilder();

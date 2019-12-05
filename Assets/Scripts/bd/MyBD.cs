@@ -1,10 +1,11 @@
 ﻿using System.Collections.Generic;
 using System;
+using UnityEngine.Serialization;
 
 namespace Sufferinfo
 {
     [Serializable]
-    public class MyBD : BaseBD
+    public class MyBd : BaseBd
     {
         public string uuid;
         public string pw;
@@ -13,12 +14,12 @@ namespace Sufferinfo
         public int age;
         public int sicktype;
 
-        public List<Train> Trains = new List<Train>();
-        public List<Estimate> Estimates = new List<Estimate>();
+        [FormerlySerializedAs("Trains")] public List<Train> trains = new List<Train>();
+        [FormerlySerializedAs("Estimates")] public List<Estimate> estimates = new List<Estimate>();
     }
 
     [Serializable]
-    public class Train : BaseBD
+    public class Train : BaseBd
     {
         public int level;
         public float scores;
@@ -28,20 +29,20 @@ namespace Sufferinfo
     }
 
     [Serializable]
-    public class Estimate : BaseBD
+    public class Estimate : BaseBd
     {
         public float scores;
         public string anyDirection;
         public string partofbody;
     }
- 
-    public abstract class BaseBD
+
+    public abstract class BaseBd
     {
-        public int number;
-        public int id;
-        public string name;
-        public string date;
-        public string doctor;
-        public string describe;
+        public int Number;
+        public int Id;
+        public string Name;
+        public string Date;
+        public string Doctor;
+        public string Describe;
     }
 }

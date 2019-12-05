@@ -4,19 +4,19 @@ using UnityEngine;
 
 public class Demo2 : MonoBehaviour
 {
-    private List<Demo2Item> itemList;
-    private Demo2Item demoItem;
+    private List<Demo2Item> _itemList;
+    private Demo2Item _demoItem;
     // Start is called before the first frame update
     void Start()
     {
-        itemList = new List<Demo2Item>();
+        _itemList = new List<Demo2Item>();
         for (int index = 0; index < 500; index++)
         {
             GameObject  objectItem = new GameObject();
             objectItem.name = "item_" + index;
-            demoItem = objectItem.AddComponent<Demo2Item>();
-            demoItem.index = index;
-            itemList.Add(demoItem);
+            _demoItem = objectItem.AddComponent<Demo2Item>();
+            _demoItem.index = index;
+            _itemList.Add(_demoItem);
         }
     }
 

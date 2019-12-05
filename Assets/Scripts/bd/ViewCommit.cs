@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class ViewCommit : MonoBehaviour
 {
 
-    public static ViewCommit vc;
+    public static ViewCommit Vc;
     
     public delegate string MyClick(string name);
 
@@ -21,7 +21,7 @@ public class ViewCommit : MonoBehaviour
 
     private void Awake()
     {
-        if (vc == null) vc = this;
+        if (Vc == null) Vc = this;
     }
 
     // Start is called before the first frame update

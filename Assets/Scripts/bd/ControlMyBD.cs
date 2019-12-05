@@ -5,33 +5,33 @@ using Sufferinfo;
 using UnityEngine;
  
 
-public static class ControlMyBD 
+public static class ControlMyBd 
 {
-    public static Dictionary<string, Suffer> suffers = new Dictionary<string, Suffer>();
+    public static Dictionary<string, Suffer> Suffers = new Dictionary<string, Suffer>();
 
-    public static Suffer curSuffer;
-    public static string CreateBD(Suffer tempsuffer)
+    public static Suffer CurSuffer;
+    public static string CreateBd(Suffer tempsuffer)
     {
-        Debug.Log(tempsuffer.info.uuid==null);
-        if(tempsuffer.info.uuid==null) tempsuffer.info.uuid = Guid.NewGuid().ToString();
-        if (suffers.ContainsKey(tempsuffer.info.uuid)) return "0此id已使用";
+        Debug.Log(tempsuffer.Info.uuid==null);
+        if(tempsuffer.Info.uuid==null) tempsuffer.Info.uuid = Guid.NewGuid().ToString();
+        if (Suffers.ContainsKey(tempsuffer.Info.uuid)) return "0此id已使用";
         
-        if (tempsuffer.info.name.Equals("")) return "0请输入名字";
+        if (tempsuffer.Info.Name.Equals("")) return "0请输入名字";
  
-        suffers.Add(tempsuffer.info.uuid,tempsuffer);
+        Suffers.Add(tempsuffer.Info.uuid,tempsuffer);
         
         Train train = new Train();
         train.level = 11;
-        train.id = 99;
-        tempsuffer.info.Trains.Add(train);
+        train.Id = 99;
+        tempsuffer.Info.trains.Add(train);
         
         Estimate estimate = new Estimate();
         train.level = 11;
-        train.id = 99;
-        tempsuffer.info.Estimates.Add(estimate);
-        curSuffer = tempsuffer;
+        train.Id = 99;
+        tempsuffer.Info.estimates.Add(estimate);
+        CurSuffer = tempsuffer;
         
-        return 1+JsonUtility.ToJson(curSuffer);
+        return 1+JsonUtility.ToJson(CurSuffer);
     }
 }
 
@@ -39,5 +39,5 @@ public static class ControlMyBD
 
 public class Suffer
 {
-    public MyBD info = new MyBD();
+    public MyBd Info = new MyBd();
 }

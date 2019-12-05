@@ -5,15 +5,15 @@ using UnityEngine;
 
 public class FrameMgr
 {
-  public static Dictionary<object, FrameUpdate> frameList = new Dictionary<object, FrameUpdate>();
+  public static Dictionary<object, FrameUpdate> FrameList = new Dictionary<object, FrameUpdate>();
 
   /// <summary>
   /// 调用函数1 @$ @" v4 g! `$ U! a, a
   /// </summary>2 ^' N& q" x8 [# t
   public static void Run()
   {
-    FrameUpdate[] objectList = new FrameUpdate[frameList.Values.Count];
-    frameList.Values.CopyTo(objectList, 0);
+    FrameUpdate[] objectList = new FrameUpdate[FrameList.Values.Count];
+    FrameList.Values.CopyTo(objectList, 0);
 
     // 锁定
     foreach (FrameUpdate frameItem in objectList)
@@ -28,10 +28,10 @@ public class FrameMgr
   /// <param name="callback">Callback.</param>* }+ r! K1 I3 b8 l. g& m6 R+ N2 r
   public static void Register(object objectItem, Action callback = null)
   {
-    if (!frameList.ContainsKey(objectItem))
+    if (!FrameList.ContainsKey(objectItem))
     {
       FrameUpdate frameItem = new FrameUpdate(callback);
-      frameList.Add(objectItem, frameItem);
+      FrameList.Add(objectItem, frameItem);
     }
   }
 
@@ -41,7 +41,7 @@ public class FrameMgr
   /// <param name="objectItem">Object item.</param>0 X. p, k; n7 J
   public static void UnRegister(object objectItem)
   {
-    if (frameList.ContainsKey(objectItem)) frameList.Remove(objectItem);
+    if (FrameList.ContainsKey(objectItem)) FrameList.Remove(objectItem);
   }
 
 }

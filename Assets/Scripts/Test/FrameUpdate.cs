@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class FrameUpdate 
 {
-    private Action callback;
+    private Action _callback;
         
     /// <summary>
     /// 构造函数，必须实例化
@@ -13,7 +13,7 @@ public class FrameUpdate
     /// <param name="callback">Callback.</param>! Q2 V, S  s* _6 f
     public FrameUpdate(Action callback) 
     {
-        this.callback = callback; 
+        this._callback = callback; 
     }
  
     /// <summary># ?- `$ ~2 [( _, ]! N
@@ -22,6 +22,6 @@ public class FrameUpdate
     /// <param name="callback">Callback.</param>
     public virtual void Update()
     {
-        this.callback();
+        this._callback();
     } 
 }

@@ -9,9 +9,8 @@ using System.Diagnostics;
 using System.IO;
 using System.Reflection;
 using UnityEngine;
-using Debug = UnityEngine.Debug;
-using Object = System.Object;
-
+ 
+using  TestAttribute;
 public class CSharpTest : MonoBehaviour
 {
     // Start is called before the first frame update
