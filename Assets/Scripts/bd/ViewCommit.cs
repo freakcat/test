@@ -19,17 +19,21 @@ public class ViewCommit : MonoBehaviour
 
     public Text showName;
 
+    public RawImage showVideo;
     private void Awake()
     {
         if (Vc == null) Vc = this;
+        
+        iputName = transform.Find("iputName").GetComponent<InputField>();
+        createBtn = transform.Find("createBtn").GetComponent<Button>();
+        showName = transform.Find("showName").GetComponent<Text>();
+        showVideo = transform.GetComponent<RawImage>();
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        iputName = transform.Find("iputName").GetComponent<InputField>();
-        createBtn = transform.Find("createBtn").GetComponent<Button>();
-        showName = transform.Find("showName").GetComponent<Text>();
+        
         createBtn.onClick.AddListener(Click);
     }
 

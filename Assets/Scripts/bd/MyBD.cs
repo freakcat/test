@@ -10,9 +10,9 @@ namespace Sufferinfo
         public string uuid;
         public string pw;
         public string hospital;
-        public bool sex;
+        public int gender;
         public int age;
-        public int sicktype;
+        public int sickType;
 
         [FormerlySerializedAs("Trains")] public List<Train> trains = new List<Train>();
         [FormerlySerializedAs("Estimates")] public List<Estimate> estimates = new List<Estimate>();
@@ -25,7 +25,7 @@ namespace Sufferinfo
         public float scores;
         public float elapsedTime;
         public string anyDirection;
-        public string partofbody;
+        public string partOfBody;
     }
 
     [Serializable]
@@ -33,16 +33,22 @@ namespace Sufferinfo
     {
         public float scores;
         public string anyDirection;
-        public string partofbody;
+        public string partOfBody;
     }
 
-    public abstract class BaseBd
+    
+    [Serializable]
+    public class BaseBd
     {
-        public int Number;
-        public int Id;
-        public string Name;
-        public string Date;
-        public string Doctor;
-        public string Describe;
+        public int number;
+        public int id;
+        public string name;
+        public string date;
+        public string doctor;
+        public string describe;
+        public string avatar;
+        public  List<string> mediaVideo = new List<string>();
+        public List<string> mediaAudio = new List<string>();
+        public List<string> mediaPicture = new List<string>();
     }
 }
