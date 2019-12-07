@@ -1,3 +1,6 @@
+
+using UnityEngine;
+
 public class FreakcatJson<T>
 {
     public static T CreateObj(string json)
