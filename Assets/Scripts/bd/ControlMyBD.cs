@@ -7,25 +7,28 @@ using UnityEngine;
 using Debug = System.Diagnostics.Debug;
 
 
-public static class ControlMyBd 
+public static class ControlMyBd
 {
-    public static Dictionary<string, Suffer> Suffers = new Dictionary<string, Suffer>();
-    public static Suffer CurSuffer;
-    
-    public static string CreateDefaultBd(Suffer tempsuffer)
-    {
-        if(tempsuffer.Info.uuid==null) tempsuffer.Info.uuid = Guid.NewGuid().ToString();
-        if (Suffers.ContainsKey(tempsuffer.Info.uuid)) return "0此id已使用";
-        if (tempsuffer.Info.name.Equals("")) return "0请输入名字";
+    public static readonly Suffer Suffers = new Suffer();
+    public static Dictionary<string, MyBd> dic = new Dictionary<string, MyBd>();
+    public static MyBd CurSuffer;
 
-        MyBd my = tempsuffer.Info;
+    public static string CreateDefaultBd(MyBd tempsuffer)
+    {
+        if (tempsuffer.uuid == null) tempsuffer.uuid = Guid.NewGuid().ToString();
+        if (dic.ContainsKey(tempsuffer.uuid)) return "0此id已使用";
+        if (tempsuffer.name.Equals("")) return "0请输入名字";
+
+        MyBd my = tempsuffer;
+        #region Set DefaultData
+
         my.number = 0;
         my.id = 0;
-        my.date =  DateTime.Now.ToString(CultureInfo.InvariantCulture);
+        my.date = DateTime.Now.ToString(CultureInfo.InvariantCulture);
         my.doctor = "doctor";
         my.describe = "a suffer";
         my.avatar = "/defaultavatar.png";
-        my.mediaVideo.Add("https://sec.ch9.ms/ch9/f9fc/04e1404f-2a51-4ad7-9eea-0a3bb053f9fc/devtestlabsintro_mid.mp4");  
+        my.mediaVideo.Add("https://sec.ch9.ms/ch9/f9fc/04e1404f-2a51-4ad7-9eea-0a3bb053f9fc/devtestlabsintro_mid.mp4");
         my.mediaAudio.Add("");
         my.mediaPicture.Add("");
         my.pw = "123";
@@ -40,9 +43,10 @@ public static class ControlMyBd
         train.scores = 12f;
         train.anyDirection = "left";
         train.partOfBody = "leg";
-        train.mediaVideo.Add("https://sec.ch9.ms/ch9/f9fc/04e1404f-2a51-4ad7-9eea-0a3bb053f9fc/devtestlabsintro_mid.mp4");
+        train.mediaVideo.Add(
+            "https://sec.ch9.ms/ch9/f9fc/04e1404f-2a51-4ad7-9eea-0a3bb053f9fc/devtestlabsintro_mid.mp4");
         my.trains.Add(train);
-        
+
         Estimate estimate = new Estimate();
         estimate.id = 99;
         estimate.name = "daydayup";
@@ -51,16 +55,22 @@ public static class ControlMyBd
         estimate.partOfBody = "leg";
         estimate.mediaPicture.Add("/defualt.png");
         my.estimates.Add(estimate);
-        
-        tempsuffer.Info = my;
-        
-        Suffers.Add(tempsuffer.Info.uuid,tempsuffer);
+
+        #endregion
+        tempsuffer = my;
+
+        dic.Add(tempsuffer.uuid, tempsuffer);
+        if (Suffers.info == null) Suffers.info = new SDictionary<string, MyBd>(dic);
         CurSuffer = tempsuffer;
-        return 1+JsonUtility.ToJson(CurSuffer);
+        return 1 + JsonUtility.ToJson(CurSuffer);
     }
 }
- 
+
+/// <summary>
+/// Database
+/// </summary>
+[Serializable]
 public class Suffer
 {
-    public MyBd Info = new MyBd();
+    public SDictionary<string, MyBd> info;
 }
