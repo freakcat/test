@@ -15,6 +15,7 @@
           <e p="bd" t="Include">
             <e p="ControlMyBD.cs" t="Include" />
             <e p="DataMgr.cs" t="Include" />
+            <e p="FreakcatJson.cs" t="Include" />
             <e p="MyBD.cs" t="Include" />
             <e p="ViewCommit.cs" t="Include" />
           </e>
