@@ -6,20 +6,14 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Video;
 
-public class VidoePlayerEx  
+public class VidoePlayerEx : MonoBehaviour
 {
      public bool lockUrl;
-     private  VideoPlayer videoPlayer;
+     public VideoPlayer videoPlayer;
       
      public RawImage videoImage;
-
-     public VidoePlayerEx(VideoPlayer vp,RawImage ri)
-     {
-         videoPlayer = vp;
-         videoImage = ri;
-     }
-    
-    public void RenderImage()
+ 
+     public void RenderImage()
     {
         if(videoImage != null)
         {

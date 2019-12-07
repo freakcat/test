@@ -296,6 +296,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1016a018030e7de4d85cffb3d5c19be3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  vpx: {fileID: 0}
 --- !u!81 &279963500
 AudioListener:
   m_ObjectHideFlags: 0
@@ -1364,6 +1365,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2146344505}
   - component: {fileID: 2146344504}
+  - component: {fileID: 2146344506}
   m_Layer: 0
   m_Name: MediaVideo
   m_TagString: Untagged
@@ -1419,3 +1421,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2146344506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2146344503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66168569ad7ee704e9f401a9e110dcaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lockUrl: 0
+  videoPlayer: {fileID: 2146344504}
+  videoImage: {fileID: 1594882166}

@@ -4,12 +4,14 @@ using System.Collections.Generic;
 using System.Globalization;
 using Sufferinfo;
 using UnityEngine;
- 
+using Debug = System.Diagnostics.Debug;
+
 
 public static class ControlMyBd 
 {
     public static Dictionary<string, Suffer> Suffers = new Dictionary<string, Suffer>();
     public static Suffer CurSuffer;
+    
     public static string CreateDefaultBd(Suffer tempsuffer)
     {
         if(tempsuffer.Info.uuid==null) tempsuffer.Info.uuid = Guid.NewGuid().ToString();
@@ -53,7 +55,6 @@ public static class ControlMyBd
         tempsuffer.Info = my;
         
         Suffers.Add(tempsuffer.Info.uuid,tempsuffer);
-        
         CurSuffer = tempsuffer;
         return 1+JsonUtility.ToJson(CurSuffer);
     }
